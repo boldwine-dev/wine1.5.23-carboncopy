@@ -1,0 +1,23 @@
+MODULE    = winemac.drv
+IMPORTS   = user32 gdi32 advapi32
+EXTRALIBS = -framework AppKit -framework Carbon
+
+C_SRCS = \
+	display.c \
+	event.c \
+	gdi.c \
+	keyboard.c \
+	macdrv_main.c \
+	mouse.c \
+	scroll.c \
+	surface.c \
+	window.c
+
+OBJC_SRCS = \
+	cocoa_app.m \
+	cocoa_display.m \
+	cocoa_event.m \
+	cocoa_main.m \
+	cocoa_window.m
+
+@MAKE_DLL_RULES@
